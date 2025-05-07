@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'Montaga';
+  src: url('./fonts/Montaga-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'PTsansNarrow';
+  src: url('./fonts/PTSansNarrow-Regular.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --white: white;
+  --black: black;
+  --gray: gray;
+  --light_gray:rgb(180, 180, 180);
+  --gold: #ffe6ba;
+  --red: red;
+}
+
+body {
+  font-family: 'Montaga', 'Roboto', 'Calibri';
+  letter-spacing: 1.5px;
+  font-size: 1.2rem;
+  background-image: url(./img/white.jpg);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.underline {
+  text-decoration: underline 1px transparent;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.underline:hover {
+  text-decoration: underline 1px;
+  transition: 0.2s ease-in-out;
+}
+
+.link {
+  text-decoration: underline 1px var(--black);
+}
+
+h1 {
+  font-family: 'Montaga';
+  line-height: 1.1;
+}
+
+h2 {
+  padding: 1rem;
+}
+
+button {
+  border: 1px solid var(--black);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: var(--white);
+  cursor: pointer;
+  text-decoration: underline 1px transparent;
+  transition: text-decoration 0.25s;
+}
+
+button:hover {
+  text-decoration: underline 1px;
+}
+
+.gray {
+  color: var(--gray);
+}
+
+.smaller {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.dark_button {
+  background-color: var(--black);
+  color: var(--white);
+  border: 1px solid var(--white);
+}
+
+a {
+  transition: ease-in-out 0.2s;
+  all: unset;
+  cursor: pointer;
+}
+
+main {
+  margin: 0 auto;
+}
+
+
+.justify {
+  margin: 50px;
+  text-align: justify;
+}
+
+/* вход + регистрация */
+legend {
+  margin: 20px 0 0 0;
+}
+
+.log_in {
+  background-color: var(--white);
+  border: #E9D1AB double 10px;
+  border-radius: 10px;
+  width: 700px;
+  height: auto;
+  place-items: center;
+  margin: 100px auto;
+}
+
+.log_in p {
+  margin: 10px;
+}
+
+.login {
+  width: 80%;
+  text-align: left;
+  margin: 20px;
+}
+
+.error {
+  color: var(--red);
+}
+
+input {
+  width: 100%;
+  height: 40px;
+  padding: 0 4px;
+  font-size: 14px;
+}
+
+.gold_button {
+  background-color: var(--gold);
+  margin-top: 10px 0;
+}
+/* app */
+#app {
+  max-width: 100vw;
+  margin: 0;
+  text-align: center;
+}
