@@ -88,7 +88,7 @@ function move_to_payment_page() {
                                     id: elem.item.id
                                 }
                             }">
-                                <img :src="'/Aurgentum' + elem.item.image" alt="Изображение товара" width="200px">
+                                <img :src="elem.item.image" alt="Изображение товара" width="200px">
                             </RouterLink>
                             <p class="gray" @click="remove_from_basket(elem.item.id, active_id)">Удалить товар</p>
                         </div>

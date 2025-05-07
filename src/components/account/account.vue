@@ -109,7 +109,7 @@ const local = reactive({
                                             id: elem.item.id
                                         }
                                     }">
-                                        <img class="item_pic" :src="'/Aurgentum'+elem.item.image" alt="">
+                                        <img class="item_pic" :src="elem.item.image" alt="">
                                         <div class="text">
                                             <p class="name"> {{ elem.item.name }}</p>
                                             <p>{{ elem.item.price }} Р</p>
