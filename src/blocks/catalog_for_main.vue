@@ -7,13 +7,13 @@ import { RouterLink, RouterView } from 'vue-router';
     <div class="first_line line">
         <RouterLink :to="{ name: 'catalog' }">
             <div class="block background"
-                style="background-image: url(/Aurgentum/src/img/catalog_img/кольцо_каталог.png);">
+                style="background-image: url(src/img/catalog_img/кольцо_каталог.png);">
                 <p class="underline">Кольца</p>
             </div>
         </RouterLink>
         <RouterLink :to="{ name: 'catalog' }">
             <div class="block background"
-                style="background-image: url(/Aurgentum/src/img/catalog_img/каталог_браслет.png);">
+                style="background-image: url(src/img/catalog_img/каталог_браслет.png);">
                 <p class="underline">Браслеты</p>
             </div>
         </RouterLink>
@@ -25,18 +25,18 @@ import { RouterLink, RouterView } from 'vue-router';
         <p>Твоя история начинается с блеска</p>
         <RouterLink :to="{ name: 'catalog' }">
             <div class="block background"
-                style="background-image: url(/Aurgentum/src/img/catalog_img/каталог_серьги.png);">
+                style="background-image: url(src/img/catalog_img/каталог_серьги.png);">
                 <p class="underline">Серьги</p>
             </div>
         </RouterLink>
         <RouterLink :to="{ name: 'catalog' }">
             <div class="block background"
-                style="background-image: url(/Aurgentum/src/img/catalog_img/каталог_колье_кулон.png);">
+                style="background-image: url(src/img/catalog_img/каталог_колье_кулон.png);">
                 <p class="underline">Колье и кулоны</p>
             </div>
         </RouterLink>
         <RouterLink :to="{ name: 'catalog' }">
-            <div class="block background" style="background-image: url(/Aurgentum/src/img/catalog_img/каталог_все_укр.png); color:var(--white)">
+            <div class="block background" style="background-image: url(src/img/catalog_img/каталог_все_укр.png); color:var(--white)">
                 <p class="underline">Все украшения ></p>
             </div>
         </RouterLink>
