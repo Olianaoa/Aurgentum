@@ -188,6 +188,10 @@ const local = reactive({
     color: var(--white);
 }
 
+.filter p {
+    font-size: 16px;
+}
+
 @media(max-width: 992px) {
     .catalog {
         grid-template-columns: 1fr 1fr;
@@ -208,11 +212,12 @@ const local = reactive({
 }
 
 @media(max-width: 768px) {
+
     .catalog {
         grid-template-columns: 1fr;
     }
 
-    .item{
+    .item {
         width: auto;
     }
 

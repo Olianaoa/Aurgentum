@@ -82,4 +82,16 @@ img {
 button{
     margin: 20px;
 }
+
+@media(max-width: 768px) {
+.modal-main {
+    width: 350px;
+}
+}
+
+@media(max-width: 500px) {
+.modal-main {
+    width: 250px;
+}
+}
 </style>

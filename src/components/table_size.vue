@@ -161,5 +161,9 @@ table td {
     margin: 0 auto;
     text-align: justify;
 }
-
+@media(max-width: 768px) {
+    .block {
+        width: 90%;
+    }
+}
 </style>

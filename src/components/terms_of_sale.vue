@@ -76,4 +76,10 @@
 ul {
     margin: 10px 40px;
 }
+
+@media(max-width: 768px) {
+    .all_text {
+        width: 90%;
+    }
+}
 </style>

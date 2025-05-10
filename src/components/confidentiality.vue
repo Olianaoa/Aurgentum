@@ -145,4 +145,9 @@ ul {
 li {
     margin: 20px 0;
 }
+@media(max-width: 768px) {
+    .everything {
+        width: 90%;
+    }
+}
 </style>
