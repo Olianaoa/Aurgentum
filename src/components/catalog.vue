@@ -86,7 +86,8 @@ const local = reactive({
                     </div>
                     <div class="add_to_basket">
                         <button v-if="!elem.in_basket" @click="add_to_basket(elem, active_id)">В корзину</button>
-                        <button v-else class="dark_button" @click="remove_from_basket(elem.id, active_id)">В корзине</button>
+                        <button v-else class="dark_button" @click="remove_from_basket(elem.id, active_id)">В
+                            корзине</button>
                     </div>
                 </div>
             </template>
@@ -134,7 +135,6 @@ const local = reactive({
     justify-content: space-between;
 }
 
-.other_filter,
 .type {
     display: flex;
     gap: 1rem;
@@ -186,5 +186,52 @@ const local = reactive({
     bottom: 20px;
     font-size: 16px;
     color: var(--white);
+}
+
+@media(max-width: 992px) {
+    .catalog {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .filter {
+        font-size: 14px;
+        flex-wrap: wrap;
+        height: auto;
+        row-gap: 10px;
+    }
+
+    .type {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
+
+@media(max-width: 768px) {
+    .catalog {
+        grid-template-columns: 1fr;
+    }
+
+    .item{
+        width: auto;
+    }
+
+
+    .filter {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .text {
+        font-size: 14px;
+    }
+
+    .filter {
+        font-size: 13px;
+    }
 }
 </style>

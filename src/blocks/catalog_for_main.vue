@@ -36,8 +36,7 @@ import { RouterLink, RouterView } from 'vue-router';
             </div>
         </RouterLink>
         <RouterLink :to="{ name: 'catalog' }">
-            <div class="block background" 
-            style="background-image: url(https://raw.githubusercontent.com/Olianaoa/Aurgentum/refs/heads/main/src/assets/catalog_img/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3_%D0%B2%D1%81%D0%B5_%D1%83%D0%BA%D1%80.png); 
+            <div class="block background" style="background-image: url(https://raw.githubusercontent.com/Olianaoa/Aurgentum/refs/heads/main/src/assets/catalog_img/%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3_%D0%B2%D1%81%D0%B5_%D1%83%D0%BA%D1%80.png); 
             color:var(--white)">
                 <p class="underline">Все украшения ></p>
             </div>
@@ -72,4 +71,30 @@ import { RouterLink, RouterView } from 'vue-router';
     justify-content: flex-end;
 }
 
+/* Мобильное меню */
+@media(max-width: 768px) {
+    .second_line,
+    .first_line {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 0;
+    }
+    .second_line>p,
+    .first_line>p{
+        display: none;
+    }
+}
+@media(max-width: 550px) {
+    .second_line,
+    .first_line {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 0;
+    }
+    .second_line>p,
+    .first_line>p{
+        display: none;
+    }
+
+}
 </style>

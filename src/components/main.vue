@@ -10,7 +10,7 @@ import about_for_main from '../blocks/about_for_main.vue';
 
 <template>
     <div class="main_container">
-        
+
         <div class="container-images container">
             <div class="image_model background">
                 <div class="text_about">
@@ -31,7 +31,7 @@ import about_for_main from '../blocks/about_for_main.vue';
         <!-- каталог -->
         <div class="catalog_main container">
             <h2>КАТАЛОГ</h2>
-            
+
             <catalog_for_main />
         </div>
         <!-- новинки -->
@@ -110,12 +110,12 @@ h2 {
 
 .image_model {
     width: 60%;
-    background-image: url(/src/img/модель.jpg);
+    background-image: url(https://raw.githubusercontent.com/Olianaoa/Aurgentum/refs/heads/main/src/img/%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C.jpg);
 }
 
 .image {
     width: 40%;
-    background-image: url(/src/img/jelwery.jpg);
+    background-image: url(https://raw.githubusercontent.com/Olianaoa/Aurgentum/refs/heads/main/src/img/jelwery.jpg);
 }
 
 .text_about {
@@ -151,56 +151,7 @@ h2 {
     padding: 80px;
 }
 
-details {
-    border-bottom: 1px solid var(--light_gray);
-    overflow: hidden;
-    transition: all 0.2s ease;
-}
 
-summary {
-    padding: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    position: relative;
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-summary::marker {
-    display: none;
-}
-
-summary::after {
-    content: url(/src/img/icons/arrow_down.svg);
-    font-size: 1.5rem;
-    margin-left: auto;
-    transition: transform 0.2s ease;
-
-}
-
-details[open] summary::after {
-    content: url(/src/img/icons/arrow_up.svg);
-}
-
-details[open] {
-    transform: scale(1.01);
-    border-bottom: 1px solid var(--black);
-    border-top: 1px solid var(--black);
-}
-
-details p {
-    text-align: left;
-    padding: 0 1rem 1rem 3rem;
-    line-height: 1.5;
-    color: var(--black);
-}
-
-ul {
-    text-align: left;
-    list-style: circle;
-    padding: 0 1rem 1rem 7rem;
-}
 
 .link {
     text-decoration: underline 1px var(--black);
@@ -209,5 +160,21 @@ ul {
 .contacts_main {
     width: 80%;
     margin: 0 auto;
+}
+
+/* Мобильное меню */
+@media(max-width: 768px) {
+    .image_model {
+        width: 100%;
+    }
+
+    .text_about {
+        bottom: 30px;
+        left: 30px;
+    }
+
+    .image {
+        display: none;
+    }
 }
 </style>

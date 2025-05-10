@@ -77,7 +77,7 @@ function move_to_payment_page() {
             <div class="all_items">
                 <template v-for="elem in basket_array">
                     <div class='item' v-if="elem.user_id === active_id">
-                        <div class="image">
+                        <div class="item_pic">
                             <img class="icon" v-if="!elem.item.favorite" src="/src/img/icons/unliked.svg"
                                 @click="add_to_fav(elem.item, active_id)">
                             <img class="icon" v-else src="/src/img/icons/liked.svg"
@@ -88,7 +88,9 @@ function move_to_payment_page() {
                                     id: elem.item.id
                                 }
                             }">
-                                <img :src="elem.item.image" alt="Изображение товара" width="200px">
+                                <div class="image">
+                                    <img :src="elem.item.image" alt="Изображение товара">
+                                </div>
                             </RouterLink>
                             <p class="gray" @click="remove_from_basket(elem.item.id, active_id)">Удалить товар</p>
                         </div>
@@ -121,6 +123,8 @@ function move_to_payment_page() {
 <style scoped>
 .no_user {
     margin: 8% 0;
+    padding: 10px;
+
 }
 
 .item p {
@@ -151,7 +155,7 @@ span {
     place-items: center;
 }
 
-.image {
+.item_pic {
     position: relative;
 }
 
@@ -162,9 +166,41 @@ span {
     right: 10px;
 }
 
-.image p {
+.item_pic p {
     padding: 0;
     margin: 0;
     cursor: pointer;
+}
+
+.image {
+    width: 200px;
+}
+
+.image img {
+    width: 100%;
+}
+
+@media(max-width: 768px) {
+    p {
+        font-size: 14px;
+    }
+
+    .image {
+        width: 150px;
+    }
+
+    .icon {
+        width: 24px;
+    }
+}
+
+@media(max-width: 500px) {
+    .image {
+        width: 100px;
+    }
+
+    .icon {
+        width: 18px;
+    }
 }
 </style>

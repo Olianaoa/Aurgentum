@@ -73,7 +73,7 @@ const local = reactive({
                         <template v-if="active_id != 0">
                             <RouterLink :to="{ name: 'change_params' }" class="uppercase underline">Изменить профиль
                             </RouterLink>
-                            <p class="underline gray" @click="local.modalShow=true">Удалить профиль</p>
+                            <p class="underline gray" @click="local.modalShow = true">Удалить профиль</p>
                         </template>
                     </div>
                 </div>
@@ -124,11 +124,8 @@ const local = reactive({
         </div>
     </div>
     <div>
-        <modal v-if="local.modalShow"
-        modalType="answer" 
-        :modalText="'Вы точно хотите удалить профиль?'" 
-        @modalYes="delete_account()"
-        @modalNo="local.modalShow = false" />
+        <modal v-if="local.modalShow" modalType="answer" :modalText="'Вы точно хотите удалить профиль?'"
+            @modalYes="delete_account()" @modalNo="local.modalShow = false" />
     </div>
 </template>
 
@@ -163,7 +160,7 @@ const local = reactive({
     background-color: var(--white);
     border: var(--black) solid 1px;
     border-radius: 10px;
-    width: 450px;
+    max-width: 450px;
     height: auto;
     padding: 20px;
 }
@@ -174,6 +171,7 @@ button {
 
 .no_user {
     margin: 8% 0;
+    padding: 10px;
 }
 
 .all_params1 {
@@ -225,5 +223,68 @@ button {
     bottom: 20px;
     font-size: 16px;
     color: var(--white);
+}
+
+@media(max-width: 1000px) {
+    .flex {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .all_params1 {
+        grid-template-columns: 1fr 1fr;
+        width: 90%;
+    }
+
+    .item {
+        width: 300px;
+    }
+
+    .item_pic {
+        width: 100%;
+    }
+
+    .filter {
+        font-size: 14px;
+        flex-wrap: wrap;
+        height: auto;
+        row-gap: 10px;
+    }
+
+    .type {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
+
+@media(max-width: 768px) {
+    .params_user {
+        min-width: 80%;
+        width: auto;
+    }
+
+    .all_params1 {
+        grid-template-columns: 1fr;
+    }
+
+    .item_pic {
+        width: 100%;
+    }
+}
+
+@media(max-width: 500px) {
+    .item {
+        width: 250px;
+        margin: 0 auto;
+    }
+
+    .item_pic {
+        width: 100%;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
 }
 </style>

@@ -65,8 +65,55 @@ const active_id = useUsers().active_id.value
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
 }
-
+.item{
+    padding: 5px;
+}
 .add_to_basket {
     margin: 20px 0;
+}
+@media(max-width: 1400px) {
+    .line {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .item{
+        width: 300px;
+    }
+    .item_pic {
+        width: 100%;
+    }
+
+    .filter {
+        font-size: 14px;
+        flex-wrap: wrap;
+        height: auto;
+        row-gap: 10px;
+    }
+
+    .type {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+}
+
+@media(max-width: 768px) {
+    .line {
+        grid-template-columns: 1fr;
+    }
+
+    .item_pic {
+        width: 100%;
+    }
+}
+
+@media(max-width: 500px) {
+    .item_pic {
+        width: 100%;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
 }
 </style>

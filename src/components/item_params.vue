@@ -161,4 +161,53 @@ li {
     text-align: left;
     display: flex;
 }
+@media(max-width: 900px) {
+    .all_params{
+        width: 100%;
+    }
+    .box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img_price  {
+        width: 350px;
+    }
+    .img_price img {
+        max-width: 100%;
+    }
+
+    .text {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .basket button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media(max-width: 500px) {
+    .text {
+        font-size: 14px;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .uppercase {
+        font-size: 16px;
+    }
+
+    ul {
+        padding-left: 15px;
+    }
+}
 </style>

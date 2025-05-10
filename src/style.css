@@ -26,7 +26,7 @@
   --white: white;
   --black: black;
   --gray: gray;
-  --light_gray:rgb(180, 180, 180);
+  --light_gray: rgb(180, 180, 180);
   --gold: #ffe6ba;
   --red: red;
 }
@@ -35,7 +35,8 @@ body {
   font-family: 'Montaga', 'Roboto', 'Calibri';
   letter-spacing: 1.5px;
   font-size: 1.2rem;
-  background-image: url(./img/white.jpg);
+  background-image: url(https://raw.githubusercontent.com/Olianaoa/Aurgentum/refs/heads/main/src/img/white.jpg);
+  min-height: 100vh;
 }
 
 .uppercase {
@@ -123,6 +124,62 @@ main {
   text-align: justify;
 }
 
+/* вопросы */
+.accordion {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+details {
+  border-bottom: 1px solid var(--light_gray);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+summary {
+  padding: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+summary::marker {
+  display: none;
+}
+
+summary::after {
+  content: url(/src/img/icons/arrow_down.svg);
+  font-size: 1.5rem;
+  margin-left: auto;
+  transition: transform 0.2s ease;
+
+}
+
+details[open] summary::after {
+  content: url(/src/img/icons/arrow_up.svg);
+}
+
+details[open] {
+  transform: scale(1.01);
+  border-bottom: 1px solid var(--black);
+  border-top: 1px solid var(--black);
+}
+
+details p {
+  text-align: left;
+  padding: 1rem 3rem;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+
+li {
+  margin: 20px 0;
+}
+
 /* вход + регистрация */
 legend {
   margin: 20px 0 0 0;
@@ -163,9 +220,60 @@ input {
   background-color: var(--gold);
   margin-top: 10px 0;
 }
+
 /* app */
 #app {
   max-width: 100vw;
   margin: 0;
   text-align: center;
+}
+
+/* Адаптивность */
+
+@media(max-width: 992px) {
+  .log_in {
+    width: 80%;
+    padding: 20px;
+  }
+}
+
+@media(max-width: 768px) {
+  .log_in h2 {
+    font-size: 1.8rem;
+  }
+
+
+
+  input {
+    height: 38px;
+    font-size: 13px;
+  }
+}
+
+@media(max-width: 500px) {
+  .log_in h2 {
+    font-size: 1.5rem;
+  }
+
+  .login {
+    margin: 10px 0;
+  }
+
+  legend {
+    font-size: 0.95rem;
+  }
+
+  .log_in {
+    border-width: 6px;
+    padding: 15px;
+  }
+
+  input {
+    height: 36px;
+    font-size: 12.5px;
+  }
+
+  .error {
+    font-size: 0.8rem;
+  }
 }

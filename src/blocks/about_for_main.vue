@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router';
 <template>
     <div class="about_shop_info">
         <div class="logo_bg background">
-            <img width="200px" src="/src/img/icons/лого_svg.svg" alt="">
+            <img src="/src/img/icons/лого_svg.svg" alt="">
         </div>
         <div class="text_about_shop">
             <p>Aurgentum — пространство, где изысканность, безупречное качество и благородство металлов
@@ -34,7 +34,7 @@ import { RouterLink } from 'vue-router';
 
 .about_shop_info {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.7fr;
     width: 80%;
     margin: 20px auto;
     place-items: center;
@@ -50,6 +50,7 @@ import { RouterLink } from 'vue-router';
 
 .logo_bg img {
     margin: auto;
+    width: 200px;
 }
 
 .text_about_shop {
@@ -61,5 +62,31 @@ import { RouterLink } from 'vue-router';
 .text_about_shop p {
     padding: 20px 0;
 }
+
+@media(max-width: 992px) {
+    .logo_bg {
+        height: 300px;
+        width: 300px;
+    }
+    .logo_bg img {
+    width: 150px;
+}
+.about_shop_info {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin: 0px auto;
+}
+.text_about_shop {
+    margin: 20px auto;
+    padding: 0 ;
+    text-align: justify;
+}
+
+.text_about_shop p {
+    padding: 10px 0;
+}
+}
+
 
 </style>

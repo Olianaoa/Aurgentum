@@ -61,7 +61,7 @@ footer {
 }
 
 .navigation {
-    padding: 10px 20px;
+    padding: 10px 10px;
     display: flex;
     flex-direction: column;
 }
@@ -73,9 +73,11 @@ footer {
 .left {
     text-align: left;
 }
-.gap{
-margin: 5px 0;
+
+.gap {
+    margin: 5px 0;
 }
+
 .gap a {
     padding: 0 5px;
 }
@@ -83,4 +85,5 @@ margin: 5px 0;
 p {
     padding: 5px 0;
 }
+
 </style>

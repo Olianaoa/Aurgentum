@@ -32,7 +32,9 @@ import contacts_block from '../blocks/contacts_block.vue';
         </div>
         <h2>Наша история</h2>
         <div class="block two">
-            <img src="/src/img/pic_about/silver.jpg">
+            <div class="img">
+                <img src="/src/img/pic_about/silver.jpg">
+            </div>
             <div class="text justify">
                 <p>В сердце Aurgentum — сияние благородных металлов, золота и серебра. Они словно два начала: золото —
                     тепло
@@ -138,11 +140,48 @@ import contacts_block from '../blocks/contacts_block.vue';
 }
 
 ul {
-    padding: 5rem;
+    padding: 1rem;
     text-align: left;
 }
 
 li {
-    padding: 1rem;
+    padding: 0 10px;
+    margin: 0;
+}
+
+@media(max-width: 992px) {
+    .block {
+        width: 95%;
+    }
+
+    ul {
+        padding: 0;
+        text-align: left;
+    }
+
+    .text {
+        padding: 0;
+    }
+
+    ul {
+        padding: 0 2rem;
+    }
+}
+
+@media(max-width: 550px) {
+    .img {
+        display: none;
+    }
+
+    .three,
+    .one {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .two {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
 </style>

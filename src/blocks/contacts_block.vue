@@ -45,7 +45,7 @@ onMounted(() => {
                     </div>
                 </div>
 
-                <div id="map" style="width:500px;height:300px;" alt="координаты агазина 'Aurgentum'"></div>
+                <div id="map" alt="координаты агазина 'Aurgentum'"></div>
             </div>
 
         </div>
@@ -96,6 +96,50 @@ onMounted(() => {
 }
 
 #map {
+    width: 500px;
+    height: 300px;
     padding: 20px;
+    margin-top: 20px;
+    align-self: center;
+}
+h3{
+    margin-top: 1rem;
+}
+@media (max-width: 1068px) {
+    .contacts {
+        width: 95%;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .main_info {
+        display: block;
+        flex-direction: column;
+        align-items: left;
+        text-align: left;
+    }
+
+    .info {
+        padding: 0;
+        margin: 0;
+    }
+
+    .adress_hours,
+    .tel_mail {
+        align-items: center;
+        gap: 0;
+        
+    }
+
+    #map {
+        height: 250px;
+        width: auto;
+        padding: 0;
+    }
+
+    .s_links p {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
 </style>
