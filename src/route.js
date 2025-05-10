@@ -1,4 +1,3 @@
-// import modal from './components/modal.vue'
 import main_page from './components/main.vue'
 import catalog from './components/catalog.vue'
 import questions from './components/questions.vue'

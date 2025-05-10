@@ -61,11 +61,14 @@ function create_acc() {
         local.pass_dont_match = ''
     }
 
+    //если все поля заполнены верно
     if (test_inp_data) {
+        // поиск пользователя с введенным номером телефона и почтой
         const find_user_phone = useUsers().find_user_phone(local.phone_num)
         const find_user_email = useUsers().find_user_email(local.inp_email)
-        if (find_user_phone === undefined) {
-            if (find_user_email === undefined) {
+        if (find_user_phone === undefined) { // если телефон не зарегистрирован
+            if (find_user_email === undefined) { // если почта не зарегистрирована
+                //добавление пользователя в массив
                 useUsers().add_user(local.inp_name, local.phone_num, local.inp_email, local.password)
                 router.push('/Aurgentum/account')
                 local.inp_name = '';
@@ -73,7 +76,7 @@ function create_acc() {
                 local.password_again = '';
                 local.inp_email = '';
                 local.phone_num = '';
-            } else {
+            } else { 
                 local.error_acc = 'Пользователь с такой почтой уже зарегистрирован.'
             }
         } else {
@@ -126,4 +129,3 @@ function create_acc() {
     </div>
 </template>
 
-<style scoped></style>

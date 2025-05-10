@@ -1,5 +1,3 @@
-<script setup>
-</script>
 <template>
     <h2>Таблица размеров</h2>
     <div class="everything">
@@ -161,6 +159,7 @@ table td {
     margin: 0 auto;
     text-align: justify;
 }
+
 @media(max-width: 768px) {
     .block {
         width: 90%;

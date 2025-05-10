@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
     <h2>Публичная оферта интернет-магазина "Aurgentum"</h2>
     <div class="all_text">

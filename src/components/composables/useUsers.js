@@ -73,12 +73,10 @@ function add_user(name, phone, email, password) {
         })
         log_in_user_acc(users.value[users.value.length - 1].id) // введенный пользователь становится активным
     }
-    console.log(users.value);
 }
 
 // АКТИВНЫЙ АЙ ДИ
 const active_id = ref('')
-console.log(active_id.value);
 
 if (localStorage.getItem('active_id') === null) {
     active_id.value = ""
@@ -100,8 +98,8 @@ const basket_array = useItems().basket_array.value
 // Зайти в аккаунт
 function log_in_user_acc(user_id) {
     active_id.value = user_id
-    console.log(favorites_array);
-
+    // установка значений true для каталога: 
+    // в массиве favorites_array есть элемент с id пользователя -> true для товара в каталоге
     favorites_array.forEach(element => {
         if (element.user_id === user_id) {
             element.item.favorite = true
@@ -109,7 +107,7 @@ function log_in_user_acc(user_id) {
             item_in_items.favorite = true
         }
     });
-
+    // в массиве basket_array есть элемент с id пользователя -> true для товара в каталоге
     basket_array.forEach(element => {
         if (element.user_id === user_id) {
             element.item.in_basket = true
@@ -127,7 +125,6 @@ function log_out() {
         item.favorite = false;
         item.in_basket = false
     });
-    console.log(active_id.value);
 }
 //удалить профиль
 function delete_user(index) {
@@ -139,7 +136,7 @@ function delete_user(index) {
     log_out()
 }
 
-//
+// смена параметров пользователя
 function change_name(index, name) {
     const user = find_user(index) // весь пользователь
     const change_user_name = users.value.indexOf(user) //id пользователя
@@ -163,6 +160,7 @@ function change_email(index, email) {
     const change_user_email = users.value.indexOf(user) //id пользователя
     users.value[change_user_email].email = email;
 }
+
 
 //название функции по названию файла
 export default function useUsers() {

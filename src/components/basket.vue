@@ -15,7 +15,7 @@ const local = reactive({
     modalType: '',
     modalText: '',
 })
-
+//удалить товар
 function remove_from_basket(item, user_id) {
     useItems().remove_from_basket(item, user_id)
 }
@@ -33,17 +33,19 @@ function add_to_fav(item, user_id) {
 function remove_from_fav(id, user_id) {
     useItems().remove_from_fav(id, user_id)
 }
-
+// итоговая цена
 const total_price = computed(() => {
     let sum = 0
     basket_array.forEach(element => {
+        // поиск товаров в корзине по активному id
+        // если id есть в массиве -> sum + цена товара
         if (element.user_id === active_id) {
             sum += Number(element.item.price)
         }
     });
     return sum
 });
-
+//модальное окно: переход к оплате
 function move_to_payment_page() {
     local.modalType = 'payment'
     local.modalShow = true
@@ -55,7 +57,6 @@ function move_to_payment_page() {
     <h2 class="uppercase">корзина</h2>
     <div v-if="active_id === '' || active_id === undefined" class="no_user">
         <p>Нет авторизованного аккаунта</p>
-
         <p>Вы можете
             <RouterLink :to="{ name: 'registration' }" class="uppercase bold underline">Создать аккаунт</RouterLink>
             /
@@ -94,7 +95,6 @@ function move_to_payment_page() {
                             </RouterLink>
                             <p class="gray" @click="remove_from_basket(elem.item.id, active_id)">Удалить товар</p>
                         </div>
-
                         <RouterLink :to="{
                             name: 'item',
                             params: {
@@ -103,7 +103,6 @@ function move_to_payment_page() {
                         }">
                             <p>{{ elem.item.name }}</p>
                         </RouterLink>
-
                         <p>{{ elem.item.price }} Рублей</p>
                     </div>
                 </template>
@@ -124,7 +123,6 @@ function move_to_payment_page() {
 .no_user {
     margin: 8% 0;
     padding: 10px;
-
 }
 
 .item p {

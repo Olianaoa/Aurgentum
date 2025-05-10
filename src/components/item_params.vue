@@ -161,18 +161,21 @@ li {
     text-align: left;
     display: flex;
 }
+
 @media(max-width: 900px) {
-    .all_params{
+    .all_params {
         width: 100%;
     }
+
     .box {
         flex-direction: column;
         align-items: center;
     }
 
-    .img_price  {
+    .img_price {
         width: 350px;
     }
+
     .img_price img {
         max-width: 100%;
     }

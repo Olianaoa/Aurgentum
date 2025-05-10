@@ -20,7 +20,6 @@ function close_menu() {
 </script>
 
 <template>
-
     <header :class="{ 'dark_header': route.path === '/Aurgentum/' || route.path === '/Aurgentum/about' },
         { 'light_header': !(route.path === '/Aurgentum/' || route.path === '/Aurgentum/about') }">
 
@@ -30,7 +29,6 @@ function close_menu() {
         </RouterLink>
 
         <div class="menu_rigth">
-
             <div class="burger" @click="toggleMenu">
                 <span class="burger-line"></span>
                 <span class="burger-line"></span>
@@ -107,11 +105,11 @@ main {
 }
 
 .burger {
+    cursor: pointer;
     display: none;
     width: 24px;
-    cursor: pointer;
     flex-direction: column;
-    margin-top: 5px;
+    padding: 10px 20px;
 }
 
 .burger-line {
@@ -123,7 +121,6 @@ main {
     background-color: var(--gold);
 }
 
-/* Мобильное меню */
 @media(max-width: 768px) {
     .navigation_left>h1 {
         font-size: 30px;
@@ -131,39 +128,31 @@ main {
 
     .burger {
         display: flex;
-        position: absolute;
-        top: 10px;
-        right: 20px;
         z-index: 1001;
     }
 
     .navigation_right {
-        display: none;
         position: absolute;
-        flex-direction: column;
-        background-color: rgba(161, 161, 161, 0.9);
-        backdrop-filter: blur(3px);
         top: 60px;
         right: 0;
         width: 40%;
+        display: none;
+        flex-direction: column;
+        background-color: rgba(161, 161, 161, 0.9);
+        backdrop-filter: blur(3px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         padding: 10px;
         z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        gap: 0;
     }
 
     .navigation_right.menu_burger {
         display: flex;
     }
 
-
     .navigation_right a {
         padding: 10px 0;
         width: 100%;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
     }
 }
 </style>

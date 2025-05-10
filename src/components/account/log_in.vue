@@ -34,21 +34,22 @@ function log_in() {
         local.error_password = 'Ошибка! Введите пароль'
         test_inp_data = false
     }
-
+    //если все поля заполнены верно
     if (test_inp_data) {
+        // поиск пользователя с введенным номером телефона
         const find_user_in_array = useUsers().find_user_phone(local.inp_phone)
-        if (find_user_in_array != undefined) {
-            console.log('пользователь', find_user_in_array);
+        if (find_user_in_array != undefined) { //если пользователь есть
+            // если есть комбинация введенный номер + введенный пароль
             if (find_user_in_array.phone === local.inp_phone && find_user_in_array.password === local.password) {
                 useUsers().log_in_user_acc(find_user_in_array.id)
                 router.push('/Aurgentum/account')
                 local.error_user_not_found = ''
                 local.inp_phone = '';
                 local.password = '';
-            } else {
+            } else { // есть номер, пароль не совпал
                 local.error_user_not_found = 'Неправильный номер или пароль.'
             }
-        } else {
+        } else { // нет номера
             local.error_user_not_found = 'Неправильный номер или пароль.'
         }
     }
@@ -78,18 +79,3 @@ function log_in() {
         </p>
     </div>
 </template>
-
-<style scoped>
-@media(max-width: 992px) {
-
-}
-
-@media(max-width: 768px) {
-
-}
-
-@media(max-width: 500px) {
-
-
-}
-</style>

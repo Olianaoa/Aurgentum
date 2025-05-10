@@ -78,7 +78,6 @@ import contacts_block from '../blocks/contacts_block.vue';
     <div class="contacts">
         <contacts_block />
     </div>
-
 </template>
 
 <style scoped>

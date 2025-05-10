@@ -5,7 +5,6 @@ import contacts_block from '../blocks/contacts_block.vue';
 import catalog_for_main from '../blocks/catalog_for_main.vue';
 import new_items from '../blocks/new_items.vue';
 import about_for_main from '../blocks/about_for_main.vue';
-
 </script>
 
 <template>
@@ -162,7 +161,6 @@ h2 {
     margin: 0 auto;
 }
 
-/* Мобильное меню */
 @media(max-width: 768px) {
     .image_model {
         width: 100%;

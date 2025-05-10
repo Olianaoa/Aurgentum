@@ -14,8 +14,8 @@ const active_id = useUsers().active_id.value
 const active_user = useUsers().find_user(active_id)
 
 function delete_account() {
-    useUsers().delete_user(active_id);
     useItems().delete_user_items(active_id);
+    useUsers().delete_user(active_id);
     log_out();
 }
 

@@ -9,6 +9,7 @@ const active_id = useUsers().active_id.value
 
 // корзина
 function add_to_basket(item, user_id) {
+    // модальное окно: если нет активного пользователя
     if (active_id === '' || active_id === undefined) {
         local.modalType = 'okay'
         local.modalShow = true
@@ -23,6 +24,7 @@ function remove_from_basket(item, user_id) {
 
 // избранное 
 function add_to_fav(item, user_id) {
+    // модальное окно: если нет активного пользователя
     if (active_id === '' || active_id === undefined) {
         local.modalType = 'okay'
         local.modalShow = true
@@ -104,16 +106,6 @@ const local = reactive({
     font-weight: bolder;
 }
 
-.underline {
-    text-decoration: underline 1px transparent;
-    transition: 0.2s ease-in-out;
-}
-
-.underline:hover {
-    text-decoration: underline 1px white;
-    transition: 0.2s ease-in-out;
-}
-
 .item_pic {
     width: 300px;
 }
@@ -121,7 +113,6 @@ const local = reactive({
 .add_to_basket {
     margin: 10px 0 0 0;
 }
-
 
 .filter {
     margin: 0 auto;
@@ -197,7 +188,6 @@ const local = reactive({
         grid-template-columns: 1fr 1fr;
     }
 
-
     .filter {
         font-size: 14px;
         flex-wrap: wrap;
@@ -212,7 +202,6 @@ const local = reactive({
 }
 
 @media(max-width: 768px) {
-
     .catalog {
         grid-template-columns: 1fr;
     }
@@ -220,7 +209,6 @@ const local = reactive({
     .item {
         width: auto;
     }
-
 
     .filter {
         flex-direction: column;
@@ -230,7 +218,6 @@ const local = reactive({
 }
 
 @media(max-width: 500px) {
-
     .text {
         font-size: 14px;
     }

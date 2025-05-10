@@ -1,13 +1,4 @@
-<script setup>
-import { reactive } from 'vue'
-
-import useUsers from '../../composables/useUsers';
-
-
-</script>
-
 <template>
-
     <h3>Изменить параметры профиля</h3>
     <div class="nav">
         <p>

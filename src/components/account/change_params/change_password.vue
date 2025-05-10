@@ -21,8 +21,6 @@ const active_user = useUsers().find_user(active_user_id)
 const user_password = active_user.password
 
 function change_password() {
-    console.log(local.old_password, '-', user_password);
-
     if (local.old_password === user_password) {
         local.error_old_password = ''
         let test_inp_data = true
