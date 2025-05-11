@@ -76,40 +76,68 @@ function move_to_payment_page() {
 
         <div class="all_params" v-else>
             <div class="all_items">
-                <template v-for="elem in basket_array">
-                    <div class='item' v-if="elem.user_id === active_id">
-                        <div class="item_pic">
-                            <img class="icon" v-if="!elem.item.favorite" src="/src/img/icons/unliked.svg"
-                                @click="add_to_fav(elem.item, active_id)">
-                            <img class="icon" v-else src="/src/img/icons/liked.svg"
-                                @click="remove_from_fav(elem.item.id, active_id)">
+                <div class="mobile">
+                    <template v-for="elem in basket_array">
+                        <div class='item' v-if="elem.user_id === active_id">
+                            <div class="item_pic">
+                                <img class="icon" v-if="!elem.item.favorite" src="/src/img/icons/unliked.svg"
+                                    @click="add_to_fav(elem.item, active_id)">
+                                <img class="icon" v-else src="/src/img/icons/liked.svg"
+                                    @click="remove_from_fav(elem.item.id, active_id)">
+                                <RouterLink :to="{
+                                    name: 'item',
+                                    params: {
+                                        id: elem.item.id
+                                    }
+                                }">
+                                    <div class="image">
+                                        <img :src="elem.item.image" alt="Изображение товара">
+                                        <p class="text">{{ elem.item.name }}</p>
+                                    </div>
+                                </RouterLink>
+                                <p class="gray" @click="remove_from_basket(elem.item.id, active_id)">Удалить товар</p>
+                            </div>
+                            <p>{{ elem.item.price }} Рублей</p>
+                        </div>
+                    </template>
+                </div>
+                <div class="pc_item">
+                    <template v-for="elem in basket_array">
+                        <div class='item' v-if="elem.user_id === active_id">
+                            <div class="item_pic">
+                                <img class="icon" v-if="!elem.item.favorite" src="/src/img/icons/unliked.svg"
+                                    @click="add_to_fav(elem.item, active_id)">
+                                <img class="icon" v-else src="/src/img/icons/liked.svg"
+                                    @click="remove_from_fav(elem.item.id, active_id)">
+                                <RouterLink :to="{
+                                    name: 'item',
+                                    params: {
+                                        id: elem.item.id
+                                    }
+                                }">
+                                    <div class="image">
+                                        <img :src="elem.item.image" alt="Изображение товара">
+                                    </div>
+                                </RouterLink>
+                                <p class="gray" @click="remove_from_basket(elem.item.id, active_id)">Удалить товар</p>
+                            </div>
                             <RouterLink :to="{
                                 name: 'item',
                                 params: {
                                     id: elem.item.id
                                 }
                             }">
-                                <div class="image">
-                                    <img :src="elem.item.image" alt="Изображение товара">
-                                </div>
+                                <p>{{ elem.item.name }}</p>
                             </RouterLink>
-                            <p class="gray" @click="remove_from_basket(elem.item.id, active_id)">Удалить товар</p>
+                            <p>{{ elem.item.price }} Рублей</p>
                         </div>
-                        <RouterLink :to="{
-                            name: 'item',
-                            params: {
-                                id: elem.item.id
-                            }
-                        }">
-                            <p>{{ elem.item.name }}</p>
-                        </RouterLink>
-                        <p>{{ elem.item.price }} Рублей</p>
-                    </div>
-                </template>
+                    </template>
+                </div>
+                <p>
+                    Итог: <span>{{ total_price }}</span> Рублей
+                </p>
             </div>
-            <p>
-                Итог: <span>{{ total_price }}</span> Рублей
-            </p>
+
             <button class="uppercase gold_button" @click="move_to_payment_page">Перейти к оплате</button>
         </div>
     </template>
@@ -120,6 +148,24 @@ function move_to_payment_page() {
 </template>
 
 <style scoped>
+.mobile {
+    display: none;
+}
+
+.pc_item {
+    display: block;
+}
+
+.text {
+    position: absolute;
+    left: 5px;
+    bottom: 45px;
+    font-size: 16px;
+    color: var(--white);
+    text-align: left;
+    line-height: 1;
+}
+
 .no_user {
     margin: 8% 0;
     padding: 10px;
@@ -179,26 +225,26 @@ span {
 }
 
 @media(max-width: 768px) {
-    p {
-        font-size: 14px;
-    }
-
     .image {
         width: 150px;
     }
 
+    .mobile {
+        display: block;
+    }
+
+    .pc_item {
+        display: none;
+    }
+
+    button {
+        padding: 10px;
+    }
+
     .icon {
         width: 24px;
-    }
-}
-
-@media(max-width: 500px) {
-    .image {
-        width: 100px;
-    }
-
-    .icon {
-        width: 18px;
+        top: 10px;
+        right: 7px;
     }
 }
 </style>
