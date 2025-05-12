@@ -133,10 +133,10 @@ function move_to_payment_page() {
                         </div>
                     </template>
                 </div>
-                <p>
-                    Итог: <span>{{ total_price }}</span> Рублей
-                </p>
             </div>
+            <p>
+                Итог: <span>{{ total_price }}</span> Рублей
+            </p>
 
             <button class="uppercase gold_button" @click="move_to_payment_page">Перейти к оплате</button>
         </div>

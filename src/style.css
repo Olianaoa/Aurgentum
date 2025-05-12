@@ -3,11 +3,6 @@
   src: url('./fonts/Montaga-Regular.ttf');
 }
 
-@font-face {
-  font-family: 'PTsansNarrow';
-  src: url('./fonts/PTSansNarrow-Regular.ttf');
-}
-
 * {
   margin: 0;
   padding: 0;
