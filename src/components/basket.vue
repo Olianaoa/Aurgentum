@@ -20,19 +20,6 @@ function remove_from_basket(item, user_id) {
     useItems().remove_from_basket(item, user_id)
 }
 
-// избранное 
-function add_to_fav(item, user_id) {
-    if (active_id === '' || active_id === undefined) {
-        local.modalType = 'okay'
-        local.modalShow = true
-        local.modalText = 'Для добавления товара в ИЗБРАННОЕ необходимо авторизоваться.'
-    } else {
-        useItems().add_to_fav(item, user_id)
-    }
-}
-function remove_from_fav(id, user_id) {
-    useItems().remove_from_fav(id, user_id)
-}
 // итоговая цена
 const total_price = computed(() => {
     let sum = 0
@@ -80,10 +67,7 @@ function move_to_payment_page() {
                     <template v-for="elem in basket_array">
                         <div class='item' v-if="elem.user_id === active_id">
                             <div class="item_pic">
-                                <img class="icon" v-if="!elem.item.favorite" src="/src/img/icons/unliked.svg"
-                                    @click="add_to_fav(elem.item, active_id)">
-                                <img class="icon" v-else src="/src/img/icons/liked.svg"
-                                    @click="remove_from_fav(elem.item.id, active_id)">
+                                
                                 <RouterLink :to="{
                                     name: 'item',
                                     params: {
@@ -105,10 +89,7 @@ function move_to_payment_page() {
                     <template v-for="elem in basket_array">
                         <div class='item' v-if="elem.user_id === active_id">
                             <div class="item_pic">
-                                <img class="icon" v-if="!elem.item.favorite" src="/src/img/icons/unliked.svg"
-                                    @click="add_to_fav(elem.item, active_id)">
-                                <img class="icon" v-else src="/src/img/icons/liked.svg"
-                                    @click="remove_from_fav(elem.item.id, active_id)">
+                                
                                 <RouterLink :to="{
                                     name: 'item',
                                     params: {
